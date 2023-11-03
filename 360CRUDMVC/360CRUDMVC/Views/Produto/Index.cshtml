@@ -1,0 +1,58 @@
+﻿@model IEnumerable<_360CRUDMVC.Models.Produto>
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h1>Produtos</h1>
+
+<div class="search-container">
+    <input type="text" id="search" placeholder="Pesquisar...">
+</div>
+
+<p>
+    <a asp-action="Criar">Criar Novo</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.Nome)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Descricao)
+            </th>
+            <th>
+                <a href="javascript:void(0)" onclick="sortTable('price')">Preco <span id="price-sort">&#x2195;</span></a>
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.DataCriacao)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Nome)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Descricao)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Preco)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.DataCriacao)
+                </td>
+                <td>
+                    <a asp-action="Editar" asp-route-id="@item.Id">Editar</a> |
+                    <a asp-action="Detalhes" asp-route-id="@item.Id">Detalhes</a> |
+                    <a asp-action="Deletar" asp-route-id="@item.Id">Deletar</a>
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>

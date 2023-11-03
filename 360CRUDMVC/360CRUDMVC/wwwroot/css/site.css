@@ -1,0 +1,35 @@
+html {
+  font-size: 14px;
+}
+
+@media (min-width: 768px) {
+  html {
+    font-size: 16px;
+  }
+}
+
+html {
+  position: relative;
+  min-height: 100%;
+}
+
+body {
+  margin-bottom: 60px;
+}
+
+.search-container {
+    text-align: left;
+    margin-bottom: 10px;
+}
+
+#search {
+    width: 300px;
+    padding: 5px;
+    border: 1px solid #ccc;
+    border-radius: 3px;
+    outline: none;
+}
+
+#sort-by {
+    padding: 5px;
+}
